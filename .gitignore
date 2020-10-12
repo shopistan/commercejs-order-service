@@ -1,0 +1,15 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.webpack
+# VS Code directory
+.vscode
+
+#variable files
+.webpack
+package-lock.json
+.env
+.env.production
