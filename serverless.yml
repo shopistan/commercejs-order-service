@@ -15,7 +15,7 @@ provider:
       Action:
         - 'sns:Publish'
       Resource:
-        - ${env:snsProductCreatedTopic}
+        - ${env:snsCreateOrderTopic}
     - Effect: "Allow"
       Action:
         - "sqs:SendMessage"
