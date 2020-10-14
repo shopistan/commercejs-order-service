@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const schema = new mongoose.Schema(
   {
     status: { type: String },
+    name: { type: String },
+    email: { type: String },
     items:   [{ type:mongoose.Schema.Types.ObjectId, ref:"OrderItem"}],
     customer: { type:mongoose.Schema.Types.ObjectId, ref:"OrderCustomer"}
   },

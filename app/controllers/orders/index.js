@@ -30,7 +30,7 @@ const save = async (data) => {
         items.push(itm);
         skus.push({ sku: item.sku,  quantity: item.quantity });
     });
-   let ItemResponse = await OrderItem.insertMany(items)
+    let ItemResponse = await OrderItem.insertMany(items)
     let newOrder = new Order();
     newOrder.items = ItemResponse
     newOrder.status = "Created"
@@ -52,9 +52,8 @@ const save = async (data) => {
     } catch (error){
       console.log(error);
     }
-    let message = JSON.stringify({ items: skus });
       return {
-        snsResponse: await sns(message,'orderCreated','orderCreated'),
+        snsResponse: await sns(skus,'orderCreated','orderCreated'),
         mailResponce,
         order
       };

@@ -1,12 +1,12 @@
 const SNS = require("./sns");
 const { snsTopics } = require("../config/keys");
-module.exports = async (message, subject, topic) => {
+module.exports = async (items, subject, topic) => {
   try {
     const sns = SNS();
     return await sns
       .publish({
         Message: JSON.stringify({
-          message,
+          items,
         }),
         Subject: subject,
         TopicArn: snsTopics[topic],
